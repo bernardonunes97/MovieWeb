@@ -4,13 +4,13 @@
      http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
     version="2.0">
 
- <persistence-unit name="movies">
+ <persistence-unit name="MovieUser">
 
    <!-- provedor/implementacao do JPA -->
    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
    <!-- entidade mapeada -->
-   <class>br.com.movie.model.MovieBean</class>
+   <class>br.com.movie.model.MovieUserBean</class>
 
    <properties>
     <!-- dados da conexao -->
@@ -35,7 +35,7 @@
    </properties>
  </persistence-unit>
  
-  <persistence-unit name="users">
+  <persistence-unit name="User">
 
    <!-- provedor/implementacao do JPA -->
    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
