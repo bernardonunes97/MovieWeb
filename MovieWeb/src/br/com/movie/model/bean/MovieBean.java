@@ -1,8 +1,15 @@
 package br.com.movie.model.bean;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Movie")
 public class MovieBean {
 	
 	//Properties
+	@Id
 	private int id;
 	private String name;
 	private float rating;

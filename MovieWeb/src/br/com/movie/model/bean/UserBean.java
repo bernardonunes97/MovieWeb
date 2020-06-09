@@ -1,12 +1,22 @@
 package br.com.movie.model.bean;
 
+import java.util.ArrayList;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "User")
 public class UserBean {
 	
-	//properties
+	//Properties
+	@Id
 	private int id;
 	private String username;
 	private String name;
 	private String password;
+	private ArrayList<MovieBean> movies;
 	
 	//Constructor
 	public UserBean(int id, String username, String name, String password){
