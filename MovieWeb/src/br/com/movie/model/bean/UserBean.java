@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "User")
@@ -16,19 +17,16 @@ public class UserBean {
 	private String username;
 	private String name;
 	private String password;
+	@Transient
 	private ArrayList<MovieBean> movies;
-	
-	//Constructor
-	public UserBean(int id, String username, String name, String password){
-		this.id = id;
-		this.username = username;
-		this.name = name;
-		this.password = password;
-	}
 
 	//Getters and Setters
 	public int getId() {
 		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getUsername() {
