@@ -6,7 +6,7 @@
 <head>
 <link rel="stylesheet" href="css/style.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
   <%@ include file="NavBar.jsp" %>
@@ -23,9 +23,15 @@
       <div class="mx-auto w-75 form-group">
         <input type="password" class="form-control" placeholder="PASSWORD" id="pwd">
       </div>
+
       <div class="margin-top text-center">
-        <button type="submit" style="margin-bottom: 8%" class="btn btn-outline-dark">ENTRAR</button>
+        <button type="submit" style="margin-bottom:2%" class="btn btn-outline-dark">ENTRAR</button>
       </div>
+
+      <div class="text-center" style="margin-bottom:7%">
+        <a href="Register.jsp" style="font-size:12px">Cadastrar novo usuário</a>
+      </div>
+      
     </form>
   </div>
 

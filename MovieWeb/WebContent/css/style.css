@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+a {
+  color: red;
+}
+
 .center {
   margin: auto;
   width: 30%;
@@ -14,5 +18,5 @@
 }
 
 .margin-top {
-	margin-top: 10%
+	margin-top: 10%;
 }

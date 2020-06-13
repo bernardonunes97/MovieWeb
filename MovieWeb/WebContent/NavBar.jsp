@@ -14,14 +14,14 @@
       <div class="col">
         <a class="navbar-brand" href="#">iMDB filmes</a>
       </div>
-      
+
       <div class="col-9">
         <input class="form-control" type="text" placeholder="Search">
       </div>
 
       <div class="col">
 		      <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
-          <a class="navbar-brand" href="#"><i class="fas fa-user-alt"></i> Entrar</a>
+          <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
       </div>
 
   </nav>
