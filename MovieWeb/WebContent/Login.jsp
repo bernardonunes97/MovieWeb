@@ -15,7 +15,7 @@
   </div>
 
   <div class="center-border">
-    <form action="">
+    <form action="LoginServlet" method="post">
       <div class="margin-top mx-auto w-75 form-group">
         <input type="text" class="form-control" placeholder="USERNAME" id="user">
       </div>
@@ -31,7 +31,7 @@
       <div class="text-center" style="margin-bottom:7%">
         <a href="Register.jsp" style="font-size:12px">Cadastrar novo usuário</a>
       </div>
-      
+
     </form>
   </div>
 
