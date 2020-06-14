@@ -10,26 +10,34 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.dao.UserDAO;
 
-
-@WebServlet("/LoginServlet")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
-
+	
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		UserDAO userDao = new UserDAO();
-		String name = req.getParameter("user");
-		String password = req.getParameter("pwd");
-		UserBean user = userDao.fetchUsername(name);
 		
-		if (user == null || user.getPassword() != password) {
-			// Usuário ou senha incorretos
+		String name = req.getParameter("name");
+		String username = req.getParameter("user");
+		String password = req.getParameter("pwd");
+		
+		UserDAO userDao = new UserDAO();
+		UserBean user = userDao.fetchUsername(username);
+		
+		if (user != null) {
+			// Usuário já existente
 		} else {
-			// Passar id para tela de favoritos
-//			req.setAttribute("userId", user.getId());
-//			req.getRequestDispatcher("Favoritos.jsp").forward(req, res);
+			// Registrar usuário
+			user = new UserBean();
+			user.setName(name);
+			user.setUsername(username);
+			user.setPassword(password);
+			if (userDao.create(user)) {
+				// Sucesso cadastrado
+			} else {
+				// Erro ao cadastrar
+			}
 		}
 	}
 }
