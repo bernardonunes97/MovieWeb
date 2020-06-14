@@ -1,0 +1,79 @@
+2020-06-14 18:59:26,226 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-14 19:00:28,645 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: MovieWebFinal:MovieWebFinal:0.0.1-SNAPSHOT @ /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/pom.xml.
+2020-06-14 19:00:29,525 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:00:29,527 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:00:29,528 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:00:29,529 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:00:29,546 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MovieWebFinal/src
+2020-06-14 19:00:29,547 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /MovieWebFinal/src/test/java because it overlaps with /MovieWebFinal/src
+2020-06-14 19:00:29,817 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-06-14 19:00:30,044 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: MovieWebFinal:MovieWebFinal:0.0.1-SNAPSHOT @ /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/pom.xml.
+2020-06-14 19:00:30,556 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MovieWebFinal/src
+2020-06-14 19:00:30,556 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /MovieWebFinal/src/test/java because it overlaps with /MovieWebFinal/src
+2020-06-14 19:00:30,702 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for MovieWebFinal
+2020-06-14 19:00:30,726 [Worker-8: Enabling Maven Dependency Management] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 0 sec
+2020-06-14 19:00:30,863 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:00:30,864 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:00:30,866 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:00:30,867 [Worker-4: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:00:30,868 [Worker-4: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of MovieWebFinal
+2020-06-14 19:00:30,868 [Worker-4: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for MovieWebFinal
+2020-06-14 19:00:30,871 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.apache.maven.plugins:maven-clean-plugin:jar:2.5 is missing, no dependency information available
+2020-06-14 19:00:30,876 [Worker-4: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:03:59,154 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-14 19:04:02,087 [Worker-6: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:02,088 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:02,090 [Worker-6: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:02,091 [Worker-6: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:04:03,767 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:03,768 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:03,769 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:03,770 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:04:12,790 [Worker-1: Building workspace] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: ListMovies:ListMovies:0.0.1-SNAPSHOT @ /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/pom.xml.
+2020-06-14 19:04:13,779 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:13,780 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:13,781 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:13,782 [Worker-1: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:04:13,783 [Worker-1: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of MovieWebFinal
+2020-06-14 19:04:13,783 [Worker-1: Building workspace] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for MovieWebFinal
+2020-06-14 19:04:13,785 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.apache.maven.plugins:maven-clean-plugin:jar:2.5 is missing, no dependency information available
+2020-06-14 19:04:13,789 [Worker-1: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:15,129 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:15,130 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:15,131 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:15,132 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:04:16,196 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:16,197 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:16,198 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:16,199 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:04:24,321 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:24,322 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:04:24,323 [Worker-11: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:04:24,324 [Worker-11: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:05:15,794 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:05:15,795 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:05:15,796 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:05:15,797 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:05:39,746 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-06-14 19:05:42,164 [Worker-9: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:05:42,165 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:05:42,167 [Worker-9: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:05:42,168 [Worker-9: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:10:03,914 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2020-06-14 19:10:04,368 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: ListMovies:ListMovies:0.0.1-SNAPSHOT @ /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/pom.xml.
+2020-06-14 19:10:05,592 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /MovieWebFinal/src
+2020-06-14 19:10:05,592 [Worker-0: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /MovieWebFinal/src/test/java because it overlaps with /MovieWebFinal/src
+2020-06-14 19:10:06,543 [Worker-0: Updating Maven Project] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Cleaning filtered folder for MovieWebFinal
+2020-06-14 19:10:06,547 [Worker-0: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 2 sec
+2020-06-14 19:10:07,053 [Worker-11: Building Project MovieWebFinal] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:10:07,058 [Worker-11: Building Project MovieWebFinal] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:10:07,061 [Worker-11: Building Project MovieWebFinal] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:10:07,061 [Worker-11: Building Project MovieWebFinal] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
+2020-06-14 19:10:07,062 [Worker-11: Building Project MovieWebFinal] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of MovieWebFinal
+2020-06-14 19:10:07,062 [Worker-11: Building Project MovieWebFinal] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for MovieWebFinal
+2020-06-14 19:10:07,065 [Worker-11: Building Project MovieWebFinal] WARN  o.e.m.c.i.embedder.EclipseLogger - The POM for org.apache.maven.plugins:maven-clean-plugin:jar:2.5 is missing, no dependency information available
+2020-06-14 19:10:07,071 [Worker-11: Building Project MovieWebFinal] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:10:07,480 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:10:07,481 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/main/resources
+2020-06-14 19:10:07,483 [Worker-2: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2020-06-14 19:10:07,483 [Worker-2: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/bernardonunes/Desktop/MovieWebFinal/MovieWebFinal/src/test/resources
