@@ -34,8 +34,7 @@ public class UserDAO implements ObjectDAO<UserBean> {
 
 	@Override
 	public boolean create(UserBean object) {
-		// TODO Auto-generated method stub
+		db.insert(object, table);
 		return false;
 	}
-
 }

@@ -60,6 +60,19 @@ public class DBManager {
 		return list;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public <T>T selectByField(String table, String field, String value) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		T result = (T)manager.createQuery
+				("SELECT c FROM " + table + " c WHERE c." + field + " = " + value)
+				.getSingleResult();
+		
+		return result;
+	}
+	
 	public <T>boolean insert(T object, String table) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
