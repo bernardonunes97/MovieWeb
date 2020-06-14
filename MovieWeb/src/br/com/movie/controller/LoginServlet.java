@@ -13,12 +13,23 @@ import br.com.movie.model.dao.UserDAO;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
 
+	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+
 		UserDAO userDao = new UserDAO();
 		String name = req.getParameter("username");
 		String password = req.getParameter("pwrd");
-		UserBean user = userDao.
+		UserBean user = userDao.fetchUsername(name);
+		
+		if (user == null || user.getPassword() != password) {
+			// Usuário ou senha incorretos
+		} else {
+			// Passar id para tela de favoritos
+//			req.setAttribute("userId", user.getId());
+//			req.getRequestDispatcher("Favoritos.jsp").forward(req, res);
+		}
 	}
 }

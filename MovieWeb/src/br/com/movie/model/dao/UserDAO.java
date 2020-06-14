@@ -37,4 +37,8 @@ public class UserDAO implements ObjectDAO<UserBean> {
 		db.insert(object, table);
 		return false;
 	}
+	
+	public UserBean fetchUsername(String username) {
+		return db.selectByField(table, "username", username);
+	}
 }
