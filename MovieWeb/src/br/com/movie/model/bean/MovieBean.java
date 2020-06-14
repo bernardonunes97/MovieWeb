@@ -1,47 +1,45 @@
 package br.com.movie.model.bean;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class MovieBean {
 	
-	//Properties
 	private int id;
-	private String name;
-	private float rating;
-	private String genre;
-	private int year;
-	private int runtime;
 	
-	//Constructor
-	public MovieBean(int id, String name, float rating, String genre, int year, int runtime) {
-		this.id = id;
-		this.name = name;
-		this.rating = rating;
-		this.genre = genre;
-		this.year = year;
-		this.runtime = runtime;
-	}
-
-	//Getters
+	private String title;
+	
+	@JsonProperty("vote_average")
+	private float vote;
+	
+	@JsonProperty("poster_path")
+	private String poster;
+	
+	@JsonIgnore
+	private boolean isFavorite;
+	
+	//MARK:- Getters
 	public int getId() {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public String getTitle() {
+		return title;
 	}
 
-	public float getRating() {
-		return rating;
+	public float getVote() {
+		return vote;
 	}
 
-	public String getGenre() {
-		return genre;
+	public String getPoster() {
+		return poster;
 	}
 
-	public int getYear() {
-		return year;
+	public boolean isFavorite() {
+		return isFavorite;
 	}
 
-	public int getRuntime() {
-		return runtime;
-	}	
+	public void setFavorite(boolean isFavorite) {
+		this.isFavorite = isFavorite;
+	}
 }

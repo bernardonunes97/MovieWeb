@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.web.client.RestTemplate;
+
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.dao.UserDAO;
 
@@ -14,8 +16,7 @@ import br.com.movie.model.dao.UserDAO;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 	
-	private static final long serialVersionUID = 1L;
-
+	private static final long serialVersionUID = 1L; 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
