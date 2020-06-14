@@ -14,14 +14,16 @@
 
    <properties>
     <!-- dados da conexao -->
-     <property name="javax.persistence.jdbc.driver" 
-             value="com.mysql.jdbc.Driver" />
-    <property name="javax.persistence.jdbc.url" 
-            value="jdbc:mysql://localhost/fj21" />
-    <property name="javax.persistence.jdbc.user" 
-            value="root" />
-    <property name="javax.persistence.jdbc.password" 
-            value="12345" />
+ 		<property name="hibernate.dialect" 
+ 			value="org.hibernate.dialect.MySQLDialect"/>
+		<property name="hibernate.connection.driver_class" 
+			value="com.mysql.jdbc.Driver"/>
+		<property name="hibernate.connection.url" 
+			value="jdbc:mysql://b71bd689e11b93:bda47384@us-cdbr-east-05.cleardb.net/heroku_90c87f6652aaa5d?reconnect=true"/>
+		<property name="hibernate.connection.username" 
+			value="b71bd689e11b93"/>
+		<property name="hibernate.connection.password" 
+			value="bda47384"/>
 
      <!--  propriedades do hibernate -->
      <property name="hibernate.dialect" 
@@ -45,14 +47,16 @@
 
    <properties>
     <!-- dados da conexao -->
-     <property name="javax.persistence.jdbc.driver" 
-             value="com.mysql.jdbc.Driver" />
-    <property name="javax.persistence.jdbc.url" 
-            value="jdbc:mysql://localhost/fj21" />
-    <property name="javax.persistence.jdbc.user" 
-            value="root" />
-    <property name="javax.persistence.jdbc.password" 
-            value="12345" />
+  		<property name="hibernate.dialect" 
+ 			value="org.hibernate.dialect.MySQLDialect"/>
+		<property name="hibernate.connection.driver_class" 
+			value="com.mysql.jdbc.Driver"/>
+		<property name="hibernate.connection.url" 
+			value="jdbc:mysql://b71bd689e11b93:bda47384@us-cdbr-east-05.cleardb.net/heroku_90c87f6652aaa5d?reconnect=true"/>
+		<property name="hibernate.connection.username" 
+			value="b71bd689e11b93"/>
+		<property name="hibernate.connection.password" 
+			value="bda47384"/>
 
      <!--  propriedades do hibernate -->
      <property name="hibernate.dialect" 
