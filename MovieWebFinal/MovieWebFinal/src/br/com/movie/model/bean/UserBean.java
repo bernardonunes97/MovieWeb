@@ -21,6 +21,13 @@ public class UserBean {
 	private String password;
 	@Transient
 	private ArrayList<MovieBean> movies;
+	
+	//Constructor
+	public UserBean(String username, String name, String password) {
+		this.username = username;
+		this.name = name;
+		this.password = password;
+	}
 
 	//Getters and Setters
 	public int getId() {

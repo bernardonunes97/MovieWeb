@@ -29,10 +29,7 @@ public class RegisterServlet extends HttpServlet {
 			// Usuário já existente
 		} else {
 			// Registrar usuário
-			user = new UserBean();
-			user.setName(name);
-			user.setUsername(username);
-			user.setPassword(password);
+			user = new UserBean(username, name, password);
 			if (userDao.create(user)) {
 				// Sucesso cadastrado
 			} else {

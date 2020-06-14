@@ -1,3 +1,5 @@
 INDEX VERSION 1.131
 /Users/bernardonunes/Desktop/MovieWebFinal/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3036277537.index
 /MovieWebFinal/src
+/Users/bernardonunes/Desktop/MovieWeb/MovieWebFinal/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3036277537.index
+/MovieWebFinal/src

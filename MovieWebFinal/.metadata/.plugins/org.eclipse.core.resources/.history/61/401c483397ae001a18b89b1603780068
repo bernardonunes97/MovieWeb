@@ -1,0 +1,21 @@
+package br.com.movie.model.bo;
+
+import br.com.movie.model.bean.UserBean;
+import br.com.movie.model.dao.UserDAO;
+
+public class UserBO {
+	
+	//Properties
+	private UserDAO userDAO;
+	
+	//Constructor
+	public UserBO() {
+		this.userDAO = new UserDAO();
+	}
+	
+	//Methods
+	void createNewUser(UserBean user){
+		
+	}
+
+}
