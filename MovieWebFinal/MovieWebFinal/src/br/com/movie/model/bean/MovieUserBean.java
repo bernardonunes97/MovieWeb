@@ -14,6 +14,12 @@ public class MovieUserBean {
 	private int userId;
 	private int movieId;
 	
+	//Constructor
+	public MovieUserBean(int userId, int movieId) {
+		this.userId = userId;
+		this.movieId = movieId;
+	}
+	
 	//Getters and Setters
 	public int getId() {
 		return id;

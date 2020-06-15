@@ -1,8 +1,22 @@
 package br.com.movie.model.bo;
 
+import br.com.movie.model.bean.MovieUserBean;
+import br.com.movie.model.dao.MovieDAO;
+import br.com.movie.model.dao.UserDAO;
+
 public class MovieBO {
 	
-	void addFavMovie(int userID, int movieID) {
+	//Properties
+	private MovieDAO movieDAO;
+
+	//Constructor
+	public MovieBO() {
+		this.movieDAO = new MovieDAO();
+	}
+
+	boolean addFavMovie(int userID, int movieID) {
+		MovieUserBean favMovie = new MovieUserBean(userID, movieID);
 		
+		return movieDAO.create(favMovie);
 	}
 }

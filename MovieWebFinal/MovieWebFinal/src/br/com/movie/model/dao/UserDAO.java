@@ -34,8 +34,7 @@ public class UserDAO implements ObjectDAO<UserBean> {
 
 	@Override
 	public boolean create(UserBean object) {
-		db.insert(object, table);
-		return false;
+		return db.insert(object, table);
 	}
 	
 	public UserBean fetchUsername(String username) {

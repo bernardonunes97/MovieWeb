@@ -61,6 +61,24 @@ public class DBManager {
 	}
 	
 	@SuppressWarnings("unchecked")
+	public <T>List<T> selectAllByField(String table, String field, String value) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		
+		List<T> list = manager.createQuery("SELECT c FROM " + table + " c WHERE c." + field + " = " + value).getResultList();
+		
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
 	public <T>T selectByField(String table, String field, String value) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
@@ -72,6 +90,7 @@ public class DBManager {
 		
 		return result;
 	}
+	
 	
 	public <T>boolean insert(T object, String table) {
 		

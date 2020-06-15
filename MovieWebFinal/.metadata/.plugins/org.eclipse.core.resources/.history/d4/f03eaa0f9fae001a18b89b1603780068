@@ -1,0 +1,19 @@
+package br.com.movie.model.bo;
+
+import br.com.movie.model.dao.MovieDAO;
+import br.com.movie.model.dao.UserDAO;
+
+public class MovieBO {
+	
+	//Properties
+	private MovieDAO movieDAO;
+
+	//Constructor
+	public MovieBO() {
+		this.movieDAO = new MovieDAO();
+	}
+
+	boolean addFavMovie(int userID, int movieID) {
+		
+	}
+}
