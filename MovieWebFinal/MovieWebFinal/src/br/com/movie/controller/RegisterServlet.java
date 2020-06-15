@@ -1,6 +1,8 @@
 package br.com.movie.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,18 +25,21 @@ public class RegisterServlet extends HttpServlet {
 		String password = req.getParameter("pwd");
 		
 		UserDAO userDao = new UserDAO();
-		UserBean user = userDao.fetchUsername(username);
+		List<UserBean> user = userDao.fetchAll();
 		
-		if (user != null) {
-			// Usuário já existente
-		} else {
-			// Registrar usuário
-			user = new UserBean(username, name, password);
-			if (userDao.create(user)) {
-				// Sucesso cadastrado
-			} else {
-				// Erro ao cadastrar
-			}
-		}
+		System.out.println("User: " + user);
+//				fetchUsername(username);
+		
+//		if (user != null) {
+//			// Usuário já existente
+//		} else {
+//			// Registrar usuário
+//			user = new UserBean(username, name, password);
+//			if (userDao.create(user)) {
+//				// Sucesso cadastrado
+//			} else {
+//				// Erro ao cadastrar
+//			}
+//		}
 	}
 }

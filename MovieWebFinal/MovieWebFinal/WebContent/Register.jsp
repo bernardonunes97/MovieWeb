@@ -15,7 +15,7 @@
   </div>
 
   <div class="center-border">
-    <form action="">
+    <form action="RegisterServlet" method="post">
       <div class="margin-top mx-auto w-75 form-group">
         <input type="text" class="form-control" placeholder="NAME" id="name">
       </div>
