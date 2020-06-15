@@ -17,7 +17,21 @@
     </head>
     <body>
     	<header>
-  			<%@ include file="NavBar.jsp"%>  	
+  			  <nav class="navbar navbar-inverse bg-light navbar-light">
+
+		      <div class="col">
+		        <a class="navbar-brand" href="#">iMDB filmes</a>
+		      </div>
+		
+		      <div class="col-9">
+		       	 <input id="txtSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+		      </div>
+		
+		      <div class="col">
+				      <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
+		          <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+		      </div>
+ 			 </nav> 	
     	</header>
   
         <div class="row row-cols-1 row-cols-md-5">       
