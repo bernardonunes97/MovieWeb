@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,7 +14,7 @@ import br.com.movie.model.bean.MovieBean;
 import br.com.movie.model.bean.MovieList;
 import br.com.movie.model.network.MoviesAPI;
 
-
+@WebServlet("/movie")
 public class MovieController extends HttpServlet {
 	
 	/**
@@ -22,15 +23,23 @@ public class MovieController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MoviesAPI api;
 	private List<MovieBean> movies;
+	private int numberPages;
 	
 	public MovieController() {
 		this.api = new MoviesAPI();
 		this.movies = new ArrayList<MovieBean>();
+		this.numberPages = 5;
+		System.out.println("## ENTROU ##");
 	}
 	
 	public List<MovieBean> loadMovies(int page) {
+		
+		if (page == 0) {
+			page = 1;
+		}
+		
 		MovieList result = api.getMovies(page);
-		this.movies.addAll(result.getResults());
+		this.movies = result.getResults();
 		return this.movies;
 	}
 	
@@ -38,16 +47,36 @@ public class MovieController extends HttpServlet {
 		return api.getMovie(id);
 	}
 	
+	public int getNumberPages() {
+		return numberPages;
+	}
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		Integer page = Integer.parseInt(req.getParameter("actualPage"));
+		
+		if(page < 1) {
+			req.setAttribute("actualPage", 1);
+		} else if (page > numberPages) {
+			req.setAttribute("actualPage", numberPages);
+		} else {
+			req.setAttribute("actualPage", page);
+		}
+		
+		req.getRequestDispatcher("MovieListView.jsp").forward(req, resp);
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		 	
+		int id = Integer.parseInt(req.getParameter("id"));
+		boolean isFavorite = Boolean.parseBoolean(req.getParameter("isFavorite"));
 		
-	
+		System.out.println("ID -> " + id);
+		System.out.println("Favorite -> " + isFavorite);
+		
+		//Falta atualizar no banco
+		
 	}
 	
 }

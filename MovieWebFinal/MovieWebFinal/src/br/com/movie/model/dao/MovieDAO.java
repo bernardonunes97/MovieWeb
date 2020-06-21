@@ -1,6 +1,5 @@
 package br.com.movie.model.dao;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.movie.model.bean.MovieUserBean;

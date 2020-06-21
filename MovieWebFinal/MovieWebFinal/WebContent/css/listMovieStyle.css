@@ -53,13 +53,18 @@
     margin-left: 50px;
 }
 
- .card-text{
+.card-text {
     font-size: 15px;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
 
-#likebtn {
+.btn btn-outline-primary favorite {
 	width: 100%;
+}
+
+.pagination {
+	display: inline-block;
+	width: 70
 }
