@@ -28,8 +28,7 @@ public class MovieController extends HttpServlet {
 	public MovieController() {
 		this.api = new MoviesAPI();
 		this.movies = new ArrayList<MovieBean>();
-		this.numberPages = 5;
-		System.out.println("## ENTROU ##");
+		this.numberPages = 8;
 	}
 	
 	public List<MovieBean> loadMovies(int page) {
