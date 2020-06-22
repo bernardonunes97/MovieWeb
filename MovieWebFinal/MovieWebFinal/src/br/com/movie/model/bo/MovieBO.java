@@ -2,7 +2,6 @@ package br.com.movie.model.bo;
 
 import br.com.movie.model.bean.MovieUserBean;
 import br.com.movie.model.dao.MovieDAO;
-import br.com.movie.model.dao.UserDAO;
 
 public class MovieBO {
 	

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity
+@Entity(name = "User")
 @Table(name = "User")
 public class UserBean {
 	
@@ -28,6 +28,8 @@ public class UserBean {
 		this.name = name;
 		this.password = password;
 	}
+	
+	public UserBean() {}
 
 	//Getters and Setters
 	public int getId() {
@@ -62,4 +64,11 @@ public class UserBean {
 		this.password = password;
 	}
 
+	public ArrayList<MovieBean> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(ArrayList<MovieBean> movies) {
+		this.movies = movies;
+	}
 }
