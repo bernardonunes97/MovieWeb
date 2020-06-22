@@ -13,15 +13,10 @@ public class MovieBO {
 	public MovieBO() {
 		this.movieDAO = new MovieDAO();
 	}
-	
-	//Methods
+
 	boolean addFavMovie(int userID, int movieID) {
 		MovieUserBean favMovie = new MovieUserBean(userID, movieID);
 		
 		return movieDAO.create(favMovie);
-	}
-	
-	void unlikeMovie(int userID, int movieID) {
-		
 	}
 }

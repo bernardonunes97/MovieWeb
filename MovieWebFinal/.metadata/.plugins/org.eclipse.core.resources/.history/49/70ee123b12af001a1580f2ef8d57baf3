@@ -1,5 +1,6 @@
 package br.com.movie.model.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import br.com.movie.model.bean.MovieUserBean;
@@ -40,12 +41,9 @@ public class MovieDAO implements ObjectDAO<MovieUserBean>{
 	public boolean create(MovieUserBean object) {
 		return db.insert(object, table);
 	}
-	
-	public void delete(int userID, int movieID) {
-		
-	}
 
 	public List<MovieUserBean> fetchUserId(int id) {
 		return db.selectAllByField(table, "user_id", Integer.toString(id));
 	}
+	
 }

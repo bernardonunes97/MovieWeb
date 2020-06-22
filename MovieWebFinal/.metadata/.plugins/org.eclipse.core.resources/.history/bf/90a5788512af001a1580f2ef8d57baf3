@@ -21,7 +21,5 @@ public class MovieBO {
 		return movieDAO.create(favMovie);
 	}
 	
-	void unlikeMovie(int userID, int movieID) {
-		
-	}
+	
 }
