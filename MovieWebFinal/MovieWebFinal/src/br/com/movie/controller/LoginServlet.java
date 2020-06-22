@@ -7,8 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.web.client.RestTemplate;
-
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.bo.UserBO;
 import br.com.movie.model.dao.UserDAO;

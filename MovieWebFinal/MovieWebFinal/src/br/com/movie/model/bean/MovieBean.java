@@ -16,7 +16,7 @@ public class MovieBean {
 	private String poster;
 	
 	@JsonIgnore
-	private boolean isFavorite;
+	private boolean isFavorite = false;
 	
 	//MARK:- Getters
 	public int getId() {
@@ -35,7 +35,7 @@ public class MovieBean {
 		return poster;
 	}
 
-	public boolean isFavorite() {
+	public boolean getIsFavorite() {
 		return isFavorite;
 	}
 

@@ -9,13 +9,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <nav class="navbar navbar-inverse bg-light navbar-light">
+  <nav class="navbar navbar-inverse bg-dark navbar-dark">
 
       <div class="col">
-        <a class="navbar-brand" href="#">iMDB filmes</a>
+        <a class="navbar-brand" href="MovieListView.jsp">iMDB filmes</a>
       </div>
 
-      <div class="col">
+      <div class="col w-100">
 		      <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
           <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
       </div>
