@@ -1,0 +1,29 @@
+package br.com.movie.model.bo;
+
+import br.com.movie.model.bean.MovieUserBean;
+import br.com.movie.model.dao.MovieDAO;
+
+public class MovieBO {
+	
+	//Properties
+	private MovieDAO movieDAO;
+
+	//Constructor
+	public MovieBO() {
+		this.movieDAO = new MovieDAO();
+	}
+	
+	//Methods
+	boolean addFavMovie(int userID, int movieID) {
+		MovieUserBean favMovie = new MovieUserBean();
+		favMovie.setMovieId(movieID);
+		favMovie.setUserId(userID);
+		favMovie.setActive(true);
+		
+		return movieDAO.create(favMovie);
+	}
+	
+	void unlikeMovie(int id) {
+		movieDAO.delete(id);
+	}
+}

@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-@Entity(name = "User")
-@Table(name = "User")
+@Entity(name = "user")
+@Table(name = "user")
 public class UserBean {
 	
 	//Properties

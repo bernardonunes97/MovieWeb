@@ -63,14 +63,14 @@ public class DBManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public <T>List<T> selectAllByField(String table, String field, String value) {
+	public <T>List<T> selectAllByField(String table, String condition) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
 		EntityManager manager = factory.createEntityManager();
 		
 		manager.getTransaction().begin();
 		
-		List<T> list = manager.createQuery("SELECT c FROM " + table + " c WHERE c." + field + " = " + value).getResultList();
+		List<T> list = manager.createQuery("SELECT c FROM " + table + " c WHERE c." + condition).getResultList();
 		
 		manager.getTransaction().commit();
 		

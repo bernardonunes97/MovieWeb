@@ -1,8 +1,5 @@
 package br.com.movie.model.bo;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.dao.UserDAO;
 

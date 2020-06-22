@@ -1,5 +1,7 @@
 package br.com.movie.model.bo;
 
+import java.util.List;
+
 import br.com.movie.model.bean.MovieUserBean;
 import br.com.movie.model.dao.MovieDAO;
 
@@ -15,12 +17,19 @@ public class MovieBO {
 	
 	//Methods
 	boolean addFavMovie(int userID, int movieID) {
-		MovieUserBean favMovie = new MovieUserBean(userID, movieID);
+		MovieUserBean favMovie = new MovieUserBean();
+		favMovie.setMovieId(movieID);
+		favMovie.setUserId(userID);
+		favMovie.setActive(true);
 		
 		return movieDAO.create(favMovie);
 	}
 	
-	void unlikeMovie(int userID, int movieID) {
-		
+	boolean unlikeMovie(int id) {
+		return movieDAO.delete(id);
+	}
+	
+	public List<MovieUserBean> fetchMovies(int userId) {
+		return movieDAO.fetchUserId(userId);
 	}
 }
