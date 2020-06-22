@@ -25,7 +25,6 @@ INDEX VERSION 1.131+/Users/bernardonunes/Desktop/MovieWeb/MovieWebFinal/.metadat
 1931729240.index
 4021103970.index
 4182263162.index
-4024072119.index
 1338743879.index
 3025720232.index
 1834955220.index
