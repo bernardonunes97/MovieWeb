@@ -64,4 +64,11 @@ public class UserBean {
 		this.password = password;
 	}
 
+	public ArrayList<MovieBean> getMovies() {
+		return movies;
+	}
+
+	public void setMovies(ArrayList<MovieBean> movies) {
+		this.movies = movies;
+	}
 }

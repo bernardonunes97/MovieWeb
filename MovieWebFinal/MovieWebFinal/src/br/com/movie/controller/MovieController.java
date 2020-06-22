@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.movie.model.bean.MovieBean;
 import br.com.movie.model.bean.MovieList;
+import br.com.movie.model.bo.UserBO;
+import br.com.movie.model.dao.UserDAO;
 import br.com.movie.model.network.MoviesAPI;
 
 @WebServlet("/movie")
@@ -31,14 +33,22 @@ public class MovieController extends HttpServlet {
 		this.numberPages = 8;
 	}
 	
-	public List<MovieBean> loadMovies(int page) {
+	public List<MovieBean> loadMovies(int page, boolean favorites) {
+		
+		MovieList result;
+		UserDAO userDao = new UserDAO();
 		
 		if (page == 0) {
 			page = 1;
 		}
 		
-		MovieList result = api.getMovies(page);
-		this.movies = result.getResults();
+		if (favorites) {
+			this.movies = userDao.fetchId(UserBO.idUserLogged).getMovies();
+		} else {
+			result = api.getMovies(page);
+			this.movies = result.getResults();
+		}
+		
 		return this.movies;
 	}
 	

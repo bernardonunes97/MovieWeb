@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<jsp:useBean id="logged" class="br.com.movie.model.bo.UserBO"/>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,8 +19,12 @@
       <div class="col-9"></div>
 
       <div class="col w-100">
-		  <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
-          <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+		  <a class="navbar-brand" href="Favoritos.jsp"><i class="fas fa-star"></i></a>
+          <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i>
+           <%
+           if (logged.idUserLogged != 0) { %> Sair <% }
+           else { %> Entrar <% } %>
+           </a>
       </div>
   </nav>
 </body>

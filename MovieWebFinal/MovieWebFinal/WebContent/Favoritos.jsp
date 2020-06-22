@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="user" class="br.com.movie.controller.MovieController"/>
+<jsp:useBean id="logged" class="br.com.movie.model.bo.UserBO"/>
 <!DOCTYPE html>
 <html>
    <head>
@@ -31,7 +31,7 @@
       </header>
       <div class="container">
          <div class="card-columns">
-            <c:forEach var="movie" items="${controller.loadMovies(actualPage)}">
+            <c:forEach var="movie" items="${controller.loadMovies(actualPage, true)}">
                <div class="card bg-dark text-white">
                   <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
                   <div class="card-body">
