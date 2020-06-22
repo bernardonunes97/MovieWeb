@@ -29,26 +29,24 @@
             </div>
          </nav>
       </header>
-      <div class="container">
-         <div class="card-columns">
-            <c:forEach var="movie" items="${controller.loadMovies(actualPage)}">
-               <div class="card bg-dark text-white">
-                  <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
-                  <div class="card-body">
-                     <p class="card-title"><i class="fas fa-star"></i><b> ${movie.vote}/10</b></p>
-                     <p class="card-text">${movie.title}</p>
-                     <c:choose>
-                        <c:when test="${movie.isFavorite}">
-                           <input type="button" class="btn btn-danger favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Dislike">
-                        </c:when>
-                        <c:otherwise>
-                           <input type="button" class="btn btn-outline-primary favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Like">
-                        </c:otherwise>
-                     </c:choose>
-                  </div>
+      <div class="card-columns">
+         <c:forEach var="movie" items="${controller.loadMovies(actualPage)}">
+            <div class="card bg-dark text-white">
+               <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
+               <div class="card-body">
+                  <p class="card-title"><i class="fas fa-star"></i><b> ${movie.vote}/10</b></p>
+                  <p class="card-text">${movie.title}</p>
+                  <c:choose>
+                     <c:when test="${movie.isFavorite}">
+                        <input type="button" class="btn btn-danger favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Dislike">
+                     </c:when>
+                     <c:otherwise>
+                        <input type="button" class="btn btn-outline-primary favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Like">
+                     </c:otherwise>
+                  </c:choose>
                </div>
-            </c:forEach>
-         </div>
+            </div>
+         </c:forEach>
       </div>
       <footer>
          <form action="movie">

@@ -1,7 +1,7 @@
 
 .card {
-	margin-top: 60px;
     border: none;
+    margin-top: 20px;
 }
 
 .card-img-top {
@@ -13,9 +13,29 @@
     color: #D6D51B;
 }
 
-.card-columns {	
-	column-count: 5;
+.card-columns {		
+    column-count: 5;
+    padding: 20px 100px;
 }
+
+@media screen and (max-width: 1000px) {
+	.card-columns {		
+    	column-count: 4;
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.card-columns {		
+    	column-count: 3;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.card-columns {		
+    	column-count: 2;
+	}
+}
+
 
 .card-text {
     font-size: 15px;
@@ -29,7 +49,7 @@
 }
 
 .pagination {
-	margin-top: 40px;
+	margin-top: 10px;
 }
 
 footer {
