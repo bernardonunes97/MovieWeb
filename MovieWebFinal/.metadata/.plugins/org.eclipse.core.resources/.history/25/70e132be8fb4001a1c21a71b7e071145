@@ -16,7 +16,7 @@ public class MovieBO {
 	}
 	
 	//Methods
-	public boolean addFavMovie(int userID, int movieID) {
+	boolean addFavMovie(int userID, int movieID) {
 		MovieUserBean favMovie = new MovieUserBean();
 		favMovie.setMovieId(movieID);
 		favMovie.setUserId(userID);
@@ -25,8 +25,8 @@ public class MovieBO {
 		return movieDAO.create(favMovie);
 	}
 	
-	public boolean unlikeMovie(int movieId) {
-		return movieDAO.delete(movieId);
+	boolean unlikeMovie(int id) {
+		return movieDAO.delete(id);
 	}
 	
 	public List<MovieUserBean> fetchMovies(int userId) {

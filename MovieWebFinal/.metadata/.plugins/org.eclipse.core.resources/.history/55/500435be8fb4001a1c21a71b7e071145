@@ -84,11 +84,11 @@ public class MovieController extends HttpServlet {
 		int id = Integer.parseInt(req.getParameter("id"));
 		boolean isFavorite = Boolean.parseBoolean(req.getParameter("isFavorite"));
 		
-		if (isFavorite) {
-			movieBO.addFavMovie(0, id);
-		} else {
-			movieBO.unlikeMovie(id);
-		}
+		System.out.println("ID -> " + id);
+		System.out.println("Favorite -> " + isFavorite);
+		
+		//Falta atualizar no banco
+		
 	}
 	
 }

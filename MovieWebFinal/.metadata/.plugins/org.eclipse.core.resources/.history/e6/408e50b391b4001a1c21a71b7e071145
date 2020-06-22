@@ -89,6 +89,12 @@ public class MovieController extends HttpServlet {
 		} else {
 			movieBO.unlikeMovie(id);
 		}
+		
+		System.out.println("ID -> " + id);
+		System.out.println("Favorite -> " + isFavorite);
+		
+		//Falta atualizar no banco
+		
 	}
 	
 }

@@ -25,11 +25,11 @@ public class MovieBO {
 		return movieDAO.create(favMovie);
 	}
 	
-	public boolean unlikeMovie(int movieId) {
-		return movieDAO.delete(movieId);
+	public boolean unlikeMovie(int id) {
+		return movieDAO.delete(id);
 	}
 	
-	public List<MovieUserBean> fetchMovies(int userId) {
+	public public List<MovieUserBean> fetchMovies(int userId) {
 		return movieDAO.fetchUserId(userId);
 	}
 }
