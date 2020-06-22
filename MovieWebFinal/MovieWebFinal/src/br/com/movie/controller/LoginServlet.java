@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.bo.UserBO;
@@ -19,6 +20,7 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		HttpSession session = req.getSession();
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
 		UserBO userBo = new UserBO();
@@ -33,8 +35,9 @@ public class LoginServlet extends HttpServlet {
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		} else {
 			// Passar id para tela de favoritos
-//			req.setAttribute("userId", user.getId());
-//			req.getRequestDispatcher("Favoritos.jsp").forward(req, res);
+			//req.setAttribute("userId", user.getId());
+			session.setAttribute("username", username);
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		}
 	}
 }

@@ -33,6 +33,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		if (userBo.createNewUser(username, name, password)) {
 			System.out.println("Criado!");
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
 			req.setAttribute("error", "Usuário já existe.");
 			req.getRequestDispatcher("Register.jsp").forward(req, res);

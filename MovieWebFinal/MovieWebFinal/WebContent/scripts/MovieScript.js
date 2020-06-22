@@ -10,23 +10,9 @@ function likeOrDislikeMovie(id, isFavorite) {
 			console.log(message);
 		}
 	}).done(function() {
-		changeStateLikeButton(isFavorite, button)
+		
 	});
 }
-
-function changeStateLikeButton(isFavorite) {
-	
-	if(!isFavorite) {
-		button.classList.remove('btn-outline-primary');
-		button.classList.add('btn-danger');
-		likebtn.value = 'Unlike'
-	} else {
-		button.classList.remove('btn-danger');
-		button.classList.add('btn-outline-primary');
-		button.value = 'Like'
-	}
-}
-
 
 //Busca de filmes
 $(document).ready(function(){
