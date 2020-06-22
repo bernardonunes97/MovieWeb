@@ -21,16 +21,22 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 		HttpSession session = req.getSession();
+		
+		System.out.println("+++++++++++ MEU DEUS!!!!!");
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
 		UserBO userBo = new UserBO();
+		UserDAO userDao = new UserDAO();
 		
 		if (username == "" || password == "") {
 			req.setAttribute("error", "Preencha todos os campos!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
-		
+		System.out.println("+++++++++++ AK");
 		if (userBo.login(username, password)) {
+			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
+		} else {
 			req.setAttribute("error", "Usuário ou senha incorretos!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		} else {

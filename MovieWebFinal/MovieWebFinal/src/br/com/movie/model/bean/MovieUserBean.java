@@ -4,8 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity(name = "MovieUser")
-@Table(name = "MovieUser")
+@Entity(name = "movieuser")
+@Table(name = "movieuser")
 public class MovieUserBean {
 	
 	//Properties
@@ -13,13 +13,8 @@ public class MovieUserBean {
 	private int id;
 	private int userId;
 	private int movieId;
-	
-	//Constructor
-	public MovieUserBean(int userId, int movieId) {
-		this.userId = userId;
-		this.movieId = movieId;
-	}
-	
+	private boolean isActive;
+
 	//Getters and Setters
 	public int getId() {
 		return id;
@@ -43,5 +38,13 @@ public class MovieUserBean {
 	
 	public void setMovieId(int movieId) {
 		this.movieId = movieId;
+	}
+	
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 }

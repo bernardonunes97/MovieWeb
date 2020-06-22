@@ -8,6 +8,8 @@ public class UserBO {
 	
 	//Properties
 	private UserDAO userDAO;
+	// Temp
+	public static int idUserLogged;
 	
 	//Constructor
 	public UserBO() {
@@ -24,25 +26,20 @@ public class UserBO {
 		return userDAO.create(user);
 	}
 	
+	
 	private boolean validateUsername(String username) {
-		if (userDAO.fetchUsername(username) == null) {
-			return true;
-		} else {
-			return false;
-		}
+		return !(userDAO.fetchUsername(username) == null);
 	}
 	
+	
 	public boolean login(String username, String password) {
+		
 		if (!validateUsername(username)) {
 			return false;
 		}
 		
 		UserBean user = userDAO.fetchUsername(username);
 		
-		if(user.getPassword() == password) {
-			return true;
-		} else {
-			return false;
-		}	
+		return user.getPassword().equals(password);
 	}
 }

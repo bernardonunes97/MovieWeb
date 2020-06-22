@@ -1,0 +1,136 @@
+package br.com.movie.model.database;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import br.com.movie.model.bean.UserBean;
+
+public class DBManager {
+	
+	public static DBManager dbManager = null;
+	
+	//Constructor sigleton
+	private DBManager() {}
+	
+	//Methods
+	public static DBManager shared() {
+				
+		if (dbManager == null) {
+			dbManager = new DBManager();
+		}
+				
+		return dbManager;
+	}
+	
+	
+	public <T>T select(String table, String id, Class<T> object) {
+			
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		
+		T user = manager.find(object, id);
+		
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return user;
+	}
+	
+
+	@SuppressWarnings("unchecked")
+	public <T>List<T> selectAll(String table) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		
+		List<T> list = manager.createQuery("select c FROM " + table + " c").getResultList();
+		
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <T>List<T> selectAllByField(String table, String field, String value) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		
+		List<T> list = manager.createQuery("SELECT c FROM " + table + " c WHERE c." + field + " = " + value).getResultList();
+		
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return list;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public <T>T selectByField(String table, String field, String value) {
+		
+		T result = null;
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		try {
+			result = (T)manager.createQuery
+					("SELECT c FROM " + table + " c WHERE c." + field + " = " + "'" + value + "'")
+					.getSingleResult();
+		} catch (Exception e) {}
+		
+		return result;
+	}
+	
+	
+	public <T>boolean insert(T object, String table) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		manager.getTransaction().begin();
+		UserBean teste = (UserBean)object;
+		System.out.println("Objeto name: " + teste.getName());
+		manager.persist(object);
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return true;
+	}
+	
+	public<T> boolean update(String table, String column, String predicate) {
+		
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
+		EntityManager manager = factory.createEntityManager();
+		
+		String query = "Update " + table + " SET " + column + " WHERE " + predicate;
+		System.out.println(query);
+		
+		manager.getTransaction().begin();
+		manager.createQuery(query).executeUpdate();
+		manager.getTransaction().commit();
+		
+		manager.close();
+		factory.close();
+		
+		return true;
+		
+	}
+}
+

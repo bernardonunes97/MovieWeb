@@ -17,9 +17,7 @@
         <a class="navbar-brand" href="MovieListView.jsp">iMDB filmes</a>
       </div>
       
-      <div class="col-9">
-        <!-- <input id="txtSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"> -->
-      </div>
+      <div class="col-9"></div>
 
       <div class="col w-100">
 		  <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>

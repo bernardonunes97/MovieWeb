@@ -10,7 +10,7 @@ public class MovieDAO implements ObjectDAO<MovieUserBean>{
 
 	//Properties
 	DBManager db = DBManager.shared();
-	String table = "Movie_User";
+	String table = "movieuser";
 	
 	//Methods
 	@Override
@@ -40,9 +40,12 @@ public class MovieDAO implements ObjectDAO<MovieUserBean>{
 	public boolean create(MovieUserBean object) {
 		return db.insert(object, table);
 	}
+	
+	public boolean delete(int id) {
+		return db.update(table, "isActive = false", "id = "+id);
+	}
 
 	public List<MovieUserBean> fetchUserId(int id) {
-		return db.selectAllByField(table, "user_id", Integer.toString(id));
+		return db.selectAllByField(table, "userId = "+id+" AND isActive = true");
 	}
-	
 }
