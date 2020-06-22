@@ -10,6 +10,15 @@
 </head>
 <body>
   <%@ include file="NavBar.jsp" %>
+  
+  <%
+    String error = (String)request.getAttribute("error");
+    if (error != null) {  %>
+      <div class="alert alert-danger">
+        ${error}
+      </div>
+  <% } %>
+  
   <div class="center">
     <h2>Login</h2>
   </div>
@@ -17,11 +26,11 @@
   <div class="center-border">
     <form action="LoginServlet" method="post">
       <div class="margin-top mx-auto w-75 form-group">
-        <input type="text" class="form-control" placeholder="USERNAME" id="user">
+        <input type="text" class="form-control" placeholder="USERNAME" name="user">
       </div>
 
       <div class="mx-auto w-75 form-group">
-        <input type="password" class="form-control" placeholder="PASSWORD" id="pwd">
+        <input type="password" class="form-control" placeholder="PASSWORD" name="pwd">
       </div>
 
       <div class="margin-top text-center">

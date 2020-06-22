@@ -1,5 +1,8 @@
 package br.com.movie.model.bo;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.dao.UserDAO;
 
@@ -14,7 +17,7 @@ public class UserBO {
 	}
 	
 	//Methods
-	boolean createNewUser(String username, String name, String password){
+	public boolean createNewUser(String username, String name, String password){
 		if (!validateUsername(username)) {
 			return false;
 		}
@@ -31,7 +34,7 @@ public class UserBO {
 		}
 	}
 	
-	boolean login(String username, String password) {
+	public boolean login(String username, String password) {
 		if (!validateUsername(username)) {
 			return false;
 		}

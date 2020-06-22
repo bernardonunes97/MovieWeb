@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.movie.model.bean.UserBean;
+import br.com.movie.model.bo.UserBO;
 import br.com.movie.model.dao.UserDAO;
 
 @WebServlet("/RegisterServlet")
@@ -23,23 +24,18 @@ public class RegisterServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
+		UserBO userBo = new UserBO();
 		
-		UserDAO userDao = new UserDAO();
-		List<UserBean> user = userDao.fetchAll();
+		if (name == "" || username == "" || password == "") {
+			req.setAttribute("error", "Preencha todos os campos!");
+			req.getRequestDispatcher("Register.jsp").forward(req, res);
+		}
 		
-		System.out.println("User: " + user);
-//				fetchUsername(username);
-		
-//		if (user != null) {
-//			// Usuário já existente
-//		} else {
-//			// Registrar usuário
-//			user = new UserBean(username, name, password);
-//			if (userDao.create(user)) {
-//				// Sucesso cadastrado
-//			} else {
-//				// Erro ao cadastrar
-//			}
-//		}
+		if (userBo.createNewUser(username, name, password)) {
+			System.out.println("Criado!");
+		} else {
+			req.setAttribute("error", "Usuário já existe.");
+			req.getRequestDispatcher("Register.jsp").forward(req, res);
+		}
 	}
 }

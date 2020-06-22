@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.movie.model.bean.UserBean;
+import br.com.movie.model.bo.UserBO;
 import br.com.movie.model.dao.UserDAO;
 
 
@@ -18,13 +19,18 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		UserDAO userDao = new UserDAO();
-		String name = req.getParameter("user");
+		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
-		UserBean user = userDao.fetchUsername(name);
+		UserBO userBo = new UserBO();
 		
-		if (user == null || user.getPassword() != password) {
-			// Usuário ou senha incorretos
+		if (username == "" || password == "") {
+			req.setAttribute("error", "Preencha todos os campos!");
+			req.getRequestDispatcher("Login.jsp").forward(req, res);
+		}
+		
+		if (userBo.login(username, password)) {
+			req.setAttribute("error", "Usuário ou senha incorretos!");
+			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		} else {
 			// Passar id para tela de favoritos
 //			req.setAttribute("userId", user.getId());
