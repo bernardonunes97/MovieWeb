@@ -25,13 +25,20 @@
             </div>
             <div class="col">
                <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
-               <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+               	<c:choose>
+			  		<c:when test="${username == null }">
+			  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+			  		</c:when>
+			  		<c:otherwise>
+			  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> ${username}</a>
+			  		</c:otherwise>
+		  		</c:choose>
             </div>
          </nav>
       </header>
       <form action="movie" method="post">
 	      <div class="card-columns">
-	         <c:forEach var="movie" items="${controller.loadMovies(actualPage)}">
+	         <c:forEach var="movie" items="${controller.loadMovies(actualPage, false)}">
 	            <div class="card bg-dark text-white">
 	               <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
 	               <div class="card-body">
