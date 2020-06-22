@@ -9,11 +9,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.MovieBean;
 import br.com.movie.model.bean.MovieList;
-import br.com.movie.model.bo.MovieBO;
 import br.com.movie.model.bo.UserBO;
 import br.com.movie.model.dao.UserDAO;
 import br.com.movie.model.network.MoviesAPI;
@@ -28,13 +26,11 @@ public class MovieController extends HttpServlet {
 	private MoviesAPI api;
 	private List<MovieBean> movies;
 	private int numberPages;
-	private MovieBO movieBO;
 	
 	public MovieController() {
 		this.api = new MoviesAPI();
 		this.movies = new ArrayList<MovieBean>();
 		this.numberPages = 8;
-		this.movieBO = new MovieBO();
 	}
 	
 	public List<MovieBean> loadMovies(int page, boolean favorites) {
@@ -84,23 +80,12 @@ public class MovieController extends HttpServlet {
 		 	
 		int id = Integer.parseInt(req.getParameter("id"));
 		boolean isFavorite = Boolean.parseBoolean(req.getParameter("isFavorite"));
-		HttpSession session = req.getSession();
-		
-		if (session == null || session.getAttribute("username") == null) {
-			req.getRequestDispatcher("Login.jsp").forward(req, resp);
-		} else {
-			System.out.println("Está logado");
-		}
 		
 		System.out.println("ID -> " + id);
 		System.out.println("Favorite -> " + isFavorite);
 		
+		//Falta atualizar no banco
 		
-		if (isFavorite) {
-			movieBO.addFavMovie(0, id);
-		} else {
-			movieBO.unlikeMovie(id);
-		}
 	}
 	
 }
