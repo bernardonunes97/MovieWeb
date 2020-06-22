@@ -10,6 +10,15 @@
 </head>
 <body>
   <%@ include file="NavBar.jsp" %>
+  
+  <%
+    String error = (String)request.getAttribute("error");
+    if (error != null) {  %>
+      <div class="alert alert-danger">
+        ${error}
+      </div>
+  <% } %>
+  
   <div class="center">
     <h2>Cadastrar</h2>
   </div>

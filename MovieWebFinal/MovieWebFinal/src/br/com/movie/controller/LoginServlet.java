@@ -22,20 +22,31 @@ public class LoginServlet extends HttpServlet {
 
 		String name = req.getParameter("user");
 		String password = req.getParameter("pwd");
-		UserDAO userDao = new UserDAO();
-		UserBean user = userDao.fetchUsername(name);
-		System.out.println("Username: " + user.getUsername());
-		System.out.println("Senha: " + user.getPassword());
-		System.out.println("Password entered: " + password);
 		
-		if (user == null || !user.getPassword().equals(password)) {
-			System.out.println("Usuário ou senha incorretos");
-			// Usuário ou senha incorretos
-		} else {
-			System.out.println("Username: " + user.getUsername() + "Id: " + user.getId());
-			// Passar id para tela de favoritos
-//			req.setAttribute("userId", user.getId());
-//			req.getRequestDispatcher("Favoritos.jsp").forward(req, res);
+		if (name == "" || password == "") {
+			System.out.println("Entrou aki");
+			req.setAttribute("error", "Preencha todos os campos!");
+			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
+		
+//		UserDAO userDao = new UserDAO();
+//		UserBean user = userDao.fetchUsername(name);
+//		System.out.println("Username: " + user.getUsername());
+//		System.out.println("Senha: " + user.getPassword());
+//		System.out.println("Password entered: " + password);
+//		
+//		System.out.println("Name: " + "'" + name + "'");
+//		
+//		
+//		
+//		if (user == null || !user.getPassword().equals(password)) {
+//			System.out.println("Usuário ou senha incorretos");
+//			// Usuário ou senha incorretos
+//		} else {
+//			System.out.println("Username: " + user.getUsername() + "Id: " + user.getId());
+//			// Passar id para tela de favoritos
+////			req.setAttribute("userId", user.getId());
+////			req.getRequestDispatcher("Favoritos.jsp").forward(req, res);
+//		}
 	}
 }
