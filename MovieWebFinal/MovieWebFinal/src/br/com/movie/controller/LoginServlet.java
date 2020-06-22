@@ -37,9 +37,6 @@ public class LoginServlet extends HttpServlet {
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
-			req.setAttribute("error", "Usuário ou senha incorretos!");
-			req.getRequestDispatcher("Login.jsp").forward(req, res);
-		} else {
 			// Passar id para tela de favoritos
 			//req.setAttribute("userId", user.getId());
 			session.setAttribute("username", username);
