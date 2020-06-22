@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import br.com.movie.model.bean.UserBean;
+
 public class DBManager {
 	
 	public static DBManager dbManager = null;
@@ -81,12 +83,15 @@ public class DBManager {
 	@SuppressWarnings("unchecked")
 	public <T>T selectByField(String table, String field, String value) {
 		
+		T result = null;
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
 		EntityManager manager = factory.createEntityManager();
 		
-		T result = (T)manager.createQuery
-				("SELECT c FROM " + table + " c WHERE c." + field + " = " + value)
-				.getSingleResult();
+		try {
+			result = (T)manager.createQuery
+					("SELECT c FROM " + table + " c WHERE c." + field + " = " + "'" + value + "'")
+					.getSingleResult();
+		} catch (Exception e) {}
 		
 		return result;
 	}
@@ -98,6 +103,8 @@ public class DBManager {
 		EntityManager manager = factory.createEntityManager();
 		
 		manager.getTransaction().begin();
+		UserBean teste = (UserBean)object;
+		System.out.println("Objeto name: " + teste.getName());
 		manager.persist(object);
 		manager.getTransaction().commit();
 		

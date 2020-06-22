@@ -28,6 +28,8 @@ public class UserBean {
 		this.name = name;
 		this.password = password;
 	}
+	
+	public UserBean() {}
 
 	//Getters and Setters
 	public int getId() {

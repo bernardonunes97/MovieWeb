@@ -17,15 +17,15 @@
   <div class="center-border">
     <form action="RegisterServlet" method="post">
       <div class="margin-top mx-auto w-75 form-group">
-        <input type="text" class="form-control" placeholder="NAME" id="name">
+        <input type="text" class="form-control" placeholder="NAME" name="name">
       </div>
 
       <div class="mx-auto w-75 form-group">
-        <input type="text" class="form-control" placeholder="USERNAME" id="user">
+        <input type="text" class="form-control" placeholder="USERNAME" name="user">
       </div>
 
       <div class="mx-auto w-75 form-group">
-        <input type="password" class="form-control" placeholder="PASSWORD" id="pwd">
+        <input type="password" class="form-control" placeholder="PASSWORD" name="pwd">
       </div>
       <div class="margin-top text-center">
         <button type="submit" style="margin-bottom: 8%" class="btn btn-outline-dark">CADASTRAR</button>
