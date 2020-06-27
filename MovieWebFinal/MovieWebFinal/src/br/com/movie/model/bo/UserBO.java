@@ -26,9 +26,28 @@ public class UserBO {
 		return userDAO.create(user);
 	}
 	
+	public boolean validadeNewPasswordEntries(String username, String name, String password, String repeatPassword) {
+		if (!validateUsername(username) || !validateName(name)) {
+			return false;
+		}
+		return true;
+	}
+	
+	
+	public boolean changePassword(String name, String newPassword) {
+		String predicate = "name = '" + name + "'";
+		
+		return userDAO.update("password", predicate, newPassword);
+	}
+	
 	
 	private boolean validateUsername(String username) {
 		return !(userDAO.fetchUsername(username) == null);
+	}
+	
+	
+	private boolean validateName(String name) {
+		return !(userDAO.fetchName(name) == null);
 	}
 	
 	

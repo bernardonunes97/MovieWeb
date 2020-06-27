@@ -13,7 +13,7 @@ public class UserDAO implements ObjectDAO<UserBean> {
 
 	@Override
 	public UserBean fetchId(String id) {
-		return db.select("User", id, UserBean.class);
+		return db.select(table, id, UserBean.class);
 	}
 
 	@Override
@@ -25,11 +25,15 @@ public class UserDAO implements ObjectDAO<UserBean> {
 	public List<UserBean> fetchAll() {
 		return db.selectAll(table);
 	}
-
+	
 	@Override
 	public boolean update(UserBean object) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+	
+	public boolean update(String column, String predicate, String newValue) {
+		return db.update(table, column, newValue, predicate);
 	}
 
 	@Override
@@ -39,5 +43,9 @@ public class UserDAO implements ObjectDAO<UserBean> {
 	
 	public UserBean fetchUsername(String username) {
 		return db.selectByField(table, "username", username);
+	}
+	
+	public UserBean fetchName(String name) {
+		return db.selectByField(table, "name", name);
 	}
 }

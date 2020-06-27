@@ -114,13 +114,15 @@ public class DBManager {
 		return true;
 	}
 	
-	public<T> boolean update(String table, String column, String predicate) {
+	public<T> boolean update(String table, String column, String newValue, String predicate) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
 		EntityManager manager = factory.createEntityManager();
 		
-		String query = "Update " + table + " SET " + column + " WHERE " + predicate;
-		System.out.println(query);
+		String query =
+				"Update " + table + 
+				" SET " + column + " = " + newValue +
+				" WHERE " + predicate;
 		
 		manager.getTransaction().begin();
 		manager.createQuery(query).executeUpdate();
