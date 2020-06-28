@@ -40,14 +40,13 @@ public class MovieController extends HttpServlet {
 	public List<MovieBean> loadMovies(int page, boolean favorites) {
 		
 		MovieList result;
-		UserDAO userDao = new UserDAO();
 		
 		if (page == 0) {
 			page = 1;
 		}
 		
 		if (favorites) {
-			this.movies = userDao.fetchId(UserBO.idUserLogged).getMovies();
+			movieBO.fetchMovies(UserBO.idUserLogged);
 		} else {
 			result = api.getMovies(page);
 			this.movies = result.getResults();
@@ -94,7 +93,6 @@ public class MovieController extends HttpServlet {
 		
 		System.out.println("ID -> " + id);
 		System.out.println("Favorite -> " + isFavorite);
-		
 		
 		if (isFavorite) {
 			movieBO.addFavMovie(UserBO.idUserLogged, id);
