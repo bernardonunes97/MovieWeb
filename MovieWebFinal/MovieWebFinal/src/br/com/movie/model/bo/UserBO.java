@@ -42,12 +42,12 @@ public class UserBO {
 	
 	
 	private boolean validateUsername(String username) {
-		return !(userDAO.fetchUsername(username) == null);
+		return userDAO.fetchUsername(username) == null;
 	}
 	
 	
 	private boolean validateName(String name) {
-		return !(userDAO.fetchName(name) == null);
+		return userDAO.fetchName(name) == null;
 	}
 	
 	

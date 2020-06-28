@@ -42,7 +42,7 @@ public class MovieDAO implements ObjectDAO<MovieUserBean>{
 	}
 	
 	public boolean delete(int id) {
-		return db.update(table, "isActive = false", "movieId = "+id);
+		return db.update(table, "isActive", "false", "movieId = "+id);
 	}
 
 	public List<MovieUserBean> fetchUserId(int id) {

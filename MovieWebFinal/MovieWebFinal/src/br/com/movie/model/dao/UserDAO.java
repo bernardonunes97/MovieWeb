@@ -9,7 +9,7 @@ import br.com.movie.model.database.ObjectDAO;
 public class UserDAO implements ObjectDAO<UserBean> {
 	
 	DBManager db = DBManager.shared();
-	String table = "User";
+	String table = "user";
 
 	@Override
 	public UserBean fetchId(String id) {
