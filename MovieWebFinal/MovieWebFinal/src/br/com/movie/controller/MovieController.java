@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.MovieBean;
 import br.com.movie.model.bean.MovieList;
@@ -83,6 +84,17 @@ public class MovieController extends HttpServlet {
 		 	
 		int id = Integer.parseInt(req.getParameter("id"));
 		boolean isFavorite = Boolean.parseBoolean(req.getParameter("isFavorite"));
+		HttpSession session = req.getSession();
+		
+		if (session == null || session.getAttribute("username") == null) {
+			req.getRequestDispatcher("Login.jsp").forward(req, resp);
+		} else {
+			System.out.println("Está logado");
+		}
+		
+		System.out.println("ID -> " + id);
+		System.out.println("Favorite -> " + isFavorite);
+		
 		
 		if (isFavorite) {
 			//Passar id user

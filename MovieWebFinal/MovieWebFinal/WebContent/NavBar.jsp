@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<jsp:useBean id="logged" class="br.com.movie.model.bo.UserBO"/>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,12 +20,15 @@
       <div class="col-9"></div>
 
       <div class="col w-100">
-		  <a class="navbar-brand" href="Favoritos.jsp"><i class="fas fa-star"></i></a>
-          <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i>
-           <%
-           if (logged.idUserLogged != 0) { %> Sair <% }
-           else { %> Entrar <% } %>
-           </a>
+		  <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
+		  <c:choose>
+		  		<c:when test="${username == null }">
+		  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+		  		</c:when>
+		  		<c:otherwise>
+		  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> ${username}</a>
+		  		</c:otherwise>
+		  </c:choose>
       </div>
   </nav>
 </body>

@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.bo.UserBO;
@@ -18,8 +19,9 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		
-		System.out.println("+++++++++++ MEU DEUS!!!!!");
+
+		HttpSession session = req.getSession();
+
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
 		UserBO userBo = new UserBO();
@@ -29,13 +31,14 @@ public class LoginServlet extends HttpServlet {
 			req.setAttribute("error", "Preencha todos os campos!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
-		System.out.println("+++++++++++ AK");
 		if (userBo.login(username, password)) {
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
-			req.setAttribute("error", "Usuário ou senha incorretos!");
-			req.getRequestDispatcher("Login.jsp").forward(req, res);
+			// Passar id para tela de favoritos
+			//req.setAttribute("userId", user.getId());
+			session.setAttribute("username", username);
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		}
 	}
 }

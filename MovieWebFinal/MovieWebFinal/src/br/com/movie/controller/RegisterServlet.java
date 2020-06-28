@@ -31,15 +31,9 @@ public class RegisterServlet extends HttpServlet {
 			req.getRequestDispatcher("Register.jsp").forward(req, res);
 		}
 		
-		UserDAO userDao = new UserDAO();
-		List<UserBean> users = userDao.fetchAll();
-		for (UserBean user : users) {
-			System.out.println("Username: " + user.getUsername());
-			System.out.println("Password: " + user.getPassword());
-		}
-		
 		if (userBo.createNewUser(username, name, password)) {
 			System.out.println("Criado!");
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
 			req.setAttribute("error", "Usuário já existe.");
 			req.getRequestDispatcher("Register.jsp").forward(req, res);
