@@ -42,16 +42,8 @@ public class NewPasswordServlet extends HttpServlet {
 		}
 	}
 	
+	
 	private String errorMessage(String name, String username, String password, String repeatPassword) {
-		if (name == "" || username == "" || password == "") {
-			return "Preencha todos os campos!";
-		}
-		if (!password.equals(repeatPassword)) {
-			return "Passwords não são os mesmos.";
-		}
-		if (!userBo.validadeNewPasswordEntries(username, name, password, repeatPassword)) {
-			return "Username ou Name não encontrados";
-		}
-		return null;
+		return userBo.validadeNewPasswordEntries(name, username, password, repeatPassword);
 	}
 }

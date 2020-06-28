@@ -7,15 +7,15 @@ import br.com.movie.model.dao.MovieDAO;
 
 public class MovieBO {
 	
-	//Properties
+	// Properties
 	private MovieDAO movieDAO;
 
-	//Constructor
+	// Constructor
 	public MovieBO() {
 		this.movieDAO = new MovieDAO();
 	}
 	
-	//Methods
+	// Methods
 	public boolean addFavMovie(int userID, int movieID) {
 		MovieUserBean favMovie = new MovieUserBean();
 		favMovie.setMovieId(movieID);

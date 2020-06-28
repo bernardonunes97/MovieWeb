@@ -104,8 +104,6 @@ public class DBManager {
 		EntityManager manager = factory.createEntityManager();
 		
 		manager.getTransaction().begin();
-		UserBean teste = (UserBean)object;
-		System.out.println("Objeto name: " + teste.getName());
 		manager.persist(object);
 		manager.getTransaction().commit();
 		

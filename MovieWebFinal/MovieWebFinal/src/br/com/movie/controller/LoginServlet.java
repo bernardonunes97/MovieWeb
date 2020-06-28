@@ -21,23 +21,27 @@ public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L; 
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-
-		HttpSession session = req.getSession();
-
+		
+		// Parâmetros da .jsp
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
+		// BO e DAO
 		UserBO userBo = new UserBO();
 		UserDAO userDao = new UserDAO();
 		
+		// Testando input do usuário
 		if (username == "" || password == "") {
 			req.setAttribute("error", "Preencha todos os campos!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
+		
+		// Testando se usuário existe no banco
 		if (userBo.login(username, password)) {
+			// Usuário e senha corretos.
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
-			// Erro de login
+			// Usuário ou senha incorretos.
 			req.setAttribute("error", "Usuário ou senha incorretos!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
