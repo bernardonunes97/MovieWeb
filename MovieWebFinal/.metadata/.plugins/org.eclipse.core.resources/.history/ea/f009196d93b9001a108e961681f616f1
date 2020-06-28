@@ -26,13 +26,6 @@ public class DBManager {
 	}
 	
 	
-	/**
-	 * Operação Select no banco.
-	 * @param table nome da tabela a ser acessada.
-	 * @param id da linha.
-	 * @param object classe modelo da entidade.
-	 * @return o objeto resultado do select.
-	*/
 	public <T>T select(String table, String id, Class<T> object) {
 			
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
@@ -52,11 +45,6 @@ public class DBManager {
 	
 
 	@SuppressWarnings("unchecked")
-	/**
-	 * Operação Select no banco.
-	 * @param table nome da tabela a ser acessada.
-	 * @return todos as linhas da tabela.
-	*/
 	public <T>List<T> selectAll(String table) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
@@ -75,12 +63,6 @@ public class DBManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	/**
-	 * Operação Select no banco.
-	 * @param table nome da tabela a ser acessada.
-	 * @param condition predicate para fazer o select
-	 * @return objetos resultado da opercao select.
-	*/
 	public <T>List<T> selectAllByField(String table, String condition) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
@@ -99,13 +81,6 @@ public class DBManager {
 	}
 	
 	@SuppressWarnings("unchecked")
-	/**
-	 * Operação Select no banco.
-	 * @param table nome da tabela a ser acessada.
-	 * @param field coluna para filtrar a tabela
-	 * @param value valor desejado
-	 * @return objetos resultado da opercao select.
-	*/
 	public <T>T selectByField(String table, String field, String value) {
 		
 		T result = null;
@@ -123,12 +98,6 @@ public class DBManager {
 	}
 	
 	
-	/**
-	 * Operação Insert no banco.
-	 * @param obejct objeto a ser inserido
-	 * @param table tabela para fazer a inserção
-	 * @return Boolean que indica se a operacao foi concluida.
-	*/
 	public <T>boolean insert(T object, String table) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
@@ -144,14 +113,6 @@ public class DBManager {
 		return true;
 	}
 	
-	/**
-	 * Operação update no banco.
-	 * @param table tabela para fazer o update
-	 * @param column coluna que sofrera a alteração
-	 * @param newValue novo valor a ser atribuído
-	 * @param predicate condição para achar objeto que deve ser atualizado
-	 * @return Boolean que indica se a operacao foi concluida.
-	*/
 	public<T> boolean update(String table, String column, String newValue, String predicate) {
 		
 		EntityManagerFactory factory = Persistence.createEntityManagerFactory(table);	
