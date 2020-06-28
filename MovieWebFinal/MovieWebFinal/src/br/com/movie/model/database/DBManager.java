@@ -93,6 +93,7 @@ public class DBManager {
 					.getSingleResult();
 		} catch (Exception e) {}
 		
+		System.out.println("++++RESULT: " + result);
 		return result;
 	}
 	

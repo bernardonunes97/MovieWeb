@@ -1,6 +1,8 @@
 package br.com.movie.controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +37,9 @@ public class LoginServlet extends HttpServlet {
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
-			// Passar id para tela de favoritos
-			//req.setAttribute("userId", user.getId());
-			session.setAttribute("username", username);
-			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
+			// Erro de login
+			req.setAttribute("error", "Usuário ou senha incorretos!");
+			req.getRequestDispatcher("Login.jsp").forward(req, res);
 		}
 	}
 }

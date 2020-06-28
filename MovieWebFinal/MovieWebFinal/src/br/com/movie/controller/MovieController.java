@@ -95,7 +95,6 @@ public class MovieController extends HttpServlet {
 		System.out.println("ID -> " + id);
 		System.out.println("Favorite -> " + isFavorite);
 		
-		
 		if (isFavorite) {
 			//Passar id user
 			movieBO.addFavMovie(0, id);

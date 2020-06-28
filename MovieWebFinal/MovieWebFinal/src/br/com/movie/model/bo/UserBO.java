@@ -42,7 +42,7 @@ public class UserBO {
 	
 	
 	private boolean validateUsername(String username) {
-		return userDAO.fetchUsername(username) == null;
+		return userDAO.fetchUsername(username) != null;
 	}
 	
 	
@@ -53,12 +53,16 @@ public class UserBO {
 	
 	public boolean login(String username, String password) {
 		
-		if (!validateUsername(username)) {
-			return false;
-		}
-		
+		// Para não fazer duas requisições no banco.
+//		if (!validateUsername(username)) {
+//			return false;
+//		}
 		UserBean user = userDAO.fetchUsername(username);
 		
-		return user.getPassword().equals(password);
+		if (user != null) {
+			return user.getPassword().equals(password);
+		} else {
+			return false;
+		}
 	}
 }
