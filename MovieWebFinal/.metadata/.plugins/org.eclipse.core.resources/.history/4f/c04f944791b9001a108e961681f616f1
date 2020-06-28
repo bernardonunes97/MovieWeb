@@ -97,7 +97,8 @@ public class MovieController extends HttpServlet {
 		
 		
 		if (isFavorite) {
-			movieBO.addFavMovie(UserBO.idUserLogged, id);
+			//Passar id user
+			movieBO.addFavMovie(0, id);
 		} else {
 			movieBO.unlikeMovie(id);
 		}
