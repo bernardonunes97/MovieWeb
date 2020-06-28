@@ -85,7 +85,6 @@ public class MovieController extends HttpServlet {
 		boolean isFavorite = Boolean.parseBoolean(req.getParameter("isFavorite"));
 		
 		if (isFavorite) {
-			//Passar id user
 			movieBO.addFavMovie(0, id);
 		} else {
 			movieBO.unlikeMovie(id);

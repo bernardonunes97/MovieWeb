@@ -1312,3 +1312,28 @@ java.io.FileNotFoundException: /Users/bernardonunes/Desktop/MovieWeb/MovieWebFin
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-22 11:09:44.837
 !MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-22 11:11:47.843
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-22 11:11:47.844
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2020-06-28 15:26:08.405 -----------------------------------------------
+eclipse.buildId=4.11.0.I20190307-0500
+java.version=12.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_BR
+Framework arguments:  -product org.eclipse.epp.package.jee.product -keyring /Users/bernardonunes/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.jee.product -keyring /Users/bernardonunes/.eclipse_keyring
+
+!ENTRY org.eclipse.egit.core 1 0 2020-06-28 15:26:16.569
+!MESSAGE Using Apache MINA sshd as ssh client.
+
+!ENTRY org.eclipse.jface.text 2 0 2020-06-28 15:26:19.716
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-28 15:26:26.053
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2020-06-28 15:26:26.055
+!MESSAGE Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
