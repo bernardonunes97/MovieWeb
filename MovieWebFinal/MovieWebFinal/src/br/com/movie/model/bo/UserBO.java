@@ -85,7 +85,7 @@ public class UserBO {
 	 * @return Boolean se usuário existe.
 	*/
 	private boolean validateName(String name) {
-		return userDAO.fetchName(name) == null;
+		return userDAO.fetchName(name) != null;
 	}
 	
 	
