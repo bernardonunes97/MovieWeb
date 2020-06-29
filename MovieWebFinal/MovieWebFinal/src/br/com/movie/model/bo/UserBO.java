@@ -43,15 +43,17 @@ public class UserBO {
 	 * @return Boolean se os dados foram preenchidos corretamente.
 	*/
 	public String validadeNewPasswordEntries(String name, String username, String password, String repeatPassword) {
-		if (!validateUsername(username) || !validateName(name)) {
-			return "Username ou Name não encontrados";
-		}
-		if (name == "" || username == "" || password == "") {
+		
+		if (!validateUserInput(name, username, password, repeatPassword)) {
+			System.out.println("ASDASDASD");
 			return "Preencha todos os campos!";
 		}
-		if (!password.equals(repeatPassword)) {
-			return "Passwords não são os mesmos.";
-		}
+//		if (!validateUsername(username) || !validateName(name)) {
+//			return "Username ou Name não encontrados";
+//		}
+//		if (!password.equals(repeatPassword)) {
+//			return "Passwords não são os mesmos.";
+//		}
 		return null;
 	}
 	
@@ -108,5 +110,36 @@ public class UserBO {
 		} else {
 			return false;
 		}
+	}
+	
+	public boolean validateUserInput(String field1, String field2) {
+		
+		if (field1.trim().length() == 0 || field2.trim().length() == 0) {
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean validateUserInput(String field1, String field2, String field3) {
+		
+		if (validateUserInput(field1, field2)) {
+			if (field3.trim().length() == 0) {
+				return false;
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean validateUserInput(String field1, String field2, String field3, String field4) {
+		
+		if (validateUserInput(field1, field2, field3)) {
+			
+			if (field4.trim().length() == 0) {
+				return false;
+			}
+			return true;
+		}
+		return false;
 	}
 }

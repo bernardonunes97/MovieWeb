@@ -23,20 +23,21 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
 		// Parâmetros da .jsp
-		String username = req.getParameter("user");
-		String password = req.getParameter("pwd");
+		String username = req.getParameter("user").trim();
+		String password = req.getParameter("pwd").trim();
 		// BO e DAO
 		UserBO userBo = new UserBO();
 		UserDAO userDao = new UserDAO();
 		HttpSession session = req.getSession();
 		
 		// Testando input do usuário
-		if (username == "" || password == "") {
-			req.setAttribute("error", "Preencha todos os campos!");
+		if (!userBo.validateUserInput(username, password)) {
+			req.setAttribute("error", "Preencha todos os campos corretamente!");
 			req.getRequestDispatcher("Login.jsp").forward(req, res);
+			return;
 		}
 		
-		// Testando se usuário existe no banco
+//		// Testando se usuário existe no banco
 		if (userBo.login(username, password)) {
 			// Usuário e senha corretos.
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();

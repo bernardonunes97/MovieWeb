@@ -31,15 +31,17 @@ public class NewPasswordServlet extends HttpServlet {
 		if (error != null) {
 			req.setAttribute("error", error);
 			req.getRequestDispatcher("TrocarSenha.jsp").forward(req, res);
+			System.out.println("AKIIII");
+			return;
 		}
 		
-		if(userBo.changePassword(name, repeatPassword)) {
-			// Sucesso
-			req.getRequestDispatcher("Login.jsp").forward(req, res);
-		} else {
-			req.setAttribute("error", "Erro ao alterar senha");
-			req.getRequestDispatcher("TrocarSenha.jsp").forward(req, res);
-		}
+//		if(userBo.changePassword(name, repeatPassword)) {
+//			// Sucesso
+//			req.getRequestDispatcher("Login.jsp").forward(req, res);
+//		} else {
+//			req.setAttribute("error", "Erro ao alterar senha");
+//			req.getRequestDispatcher("TrocarSenha.jsp").forward(req, res);
+//		}
 	}
 	
 	

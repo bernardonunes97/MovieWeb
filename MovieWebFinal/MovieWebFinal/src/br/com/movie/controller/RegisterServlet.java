@@ -22,15 +22,16 @@ public class RegisterServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-		String name = req.getParameter("name");
-		String username = req.getParameter("user");
-		String password = req.getParameter("pwd");
+		String name = req.getParameter("name").trim();
+		String username = req.getParameter("user").trim();
+		String password = req.getParameter("pwd").trim();
 		HttpSession session = req.getSession();
 		UserBO userBo = new UserBO();
 		
-		if (name == "" || username == "" || password == "") {
+		if (!userBo.validateUserInput(name, username, password)) {
 			req.setAttribute("error", "Preencha todos os campos!");
 			req.getRequestDispatcher("Register.jsp").forward(req, res);
+			return;
 		}
 		
 		if (userBo.createNewUser(username, name, password)) {
