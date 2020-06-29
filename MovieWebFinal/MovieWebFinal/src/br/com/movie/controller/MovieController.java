@@ -47,29 +47,32 @@ public class MovieController extends HttpServlet {
 		}
 		
 		result = api.getMovies(page);
-		this.movies = result.getResults();
-		System.out.println(this.movies);
-		System.out.println("");
-		System.out.println("");
+		List<MovieBean> movies = result.getResults();
+		
+		List<MovieBean> favMovies = this.fetchMoviesPerUser();
+		
+		for(int i = 0; i< movies.size(); i++) {
+			MovieBean movie = movies.get(i);
+			
+			for(MovieBean favMovie: favMovies) {
+				if(movie.getId() == favMovie.getId()) {
+					movies.get(i).setFavorite(true);
+				}
+			}
+		}
+		
+		this.movies = movies;
+		
 		return this.movies;
 	}
 	
 	public List<MovieBean> loadFavoritesMovies(int page) {
-		System.out.println("++++Favorites: True");
 		if (page == 0) {
 			page = 1;
 		}
 		
-		System.out.println("++++Favorites: True");
-
-		System.out.println("+++AKI");
 		this.movies = fetchMoviesPerUser();
-		
-		System.out.println(this.movies);
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
-		System.out.println("");
+	
 		return this.movies;
 	}
 	
@@ -80,8 +83,9 @@ public class MovieController extends HttpServlet {
 		moviePerUser = movieBO.fetchMovies(UserBO.idUserLogged);
 		if (moviePerUser != null) {
 			for (MovieUserBean movie : moviePerUser) {
-				System.out.println("+++MovieID: " + movie.getId());
-				result.add(api.getMovie(movie.getMovieId()));
+				MovieBean favMovie = api.getMovie(movie.getMovieId());
+				favMovie.setFavorite(true);
+				result.add(favMovie);
 			}
 			return result;
 		}

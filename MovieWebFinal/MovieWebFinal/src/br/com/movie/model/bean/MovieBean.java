@@ -16,7 +16,7 @@ public class MovieBean {
 	private String poster;
 	
 	@JsonIgnore
-	private boolean isFavorite = false;
+	private boolean isFavorite;
 	
 	//MARK:- Getters
 	public int getId() {

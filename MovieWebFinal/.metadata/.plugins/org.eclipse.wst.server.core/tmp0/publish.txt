@@ -1,4 +1,4 @@
 #Tomcat publish data
-#Sun Jun 28 22:54:53 BRT 2020
+#Mon Jun 29 01:34:01 BRT 2020
 org.eclipse.jst.jee.server\:/binary\:/Users/bernardonunes/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/9.0.36/tomcat-embed-websocket-9.0.36.jar=WEB-INF/lib/tomcat-embed-websocket-9.0.36.jar
 org.eclipse.jst.jee.server\:/binary\:/Users/bernardonunes/.m2/repository/org/springframework/spring-web/5.2.7.RELEASE/spring-web-5.2.7.RELEASE.jar=WEB-INF/lib/spring-web-5.2.7.RELEASE.jar

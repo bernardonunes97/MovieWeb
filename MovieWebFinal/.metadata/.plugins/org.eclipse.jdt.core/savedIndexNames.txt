@@ -5,7 +5,6 @@ INDEX VERSION 1.131+/Users/bernardonunes/Desktop/MovieWeb/MovieWebFinal/.metadat
 1480056084.index
 2667520025.index
 1744854273.index
-3697887073.index
 1882753707.index
 782801047.index
 1124775369.index
@@ -14,11 +13,11 @@ INDEX VERSION 1.131+/Users/bernardonunes/Desktop/MovieWeb/MovieWebFinal/.metadat
 2937559061.index
 975750607.index
 3622984261.index
-734924125.index
+2122967501.index
 1312789009.index
+734924125.index
 251803777.index
 273703034.index
-2122967501.index
 2360159840.index
 1571904291.index
 805704410.index
@@ -30,10 +29,10 @@ INDEX VERSION 1.131+/Users/bernardonunes/Desktop/MovieWeb/MovieWebFinal/.metadat
 3025720232.index
 1834955220.index
 3849440692.index
-1606140760.index
+726499719.index
 3035831577.index
 3595340332.index
-1871406930.index
+1606140760.index
 482982579.index
-726499719.index
+1871406930.index
 1394857062.index
