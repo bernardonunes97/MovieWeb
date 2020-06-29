@@ -37,11 +37,10 @@ public class MoviesAPI {
 	}
 	
 	public MovieBean getMovie(int id) {
-		
 		HttpEntity<?> entity = new HttpEntity<>(headers);
 		
 		UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl(baseURL)
-				.path(Integer.toString(id))
+				.pathSegment(Integer.toString(id))
 				.queryParam("api_key", apiKey)
 				.queryParam("language", language);
 		

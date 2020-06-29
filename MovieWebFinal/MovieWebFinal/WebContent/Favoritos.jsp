@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
-<jsp:useBean id="logged" class="br.com.movie.model.bo.UserBO"/>
+<jsp:useBean id="controller" class="br.com.movie.controller.MovieController"/>
 <!DOCTYPE html>
 <html>
    <head>
@@ -24,32 +24,41 @@
                <input id="txtSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </div>
             <div class="col">
-               <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
-               <a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+               <a class="navbar-brand" href="Favoritos.jsp"><i class="fas fa-star"></i></a>
+               	<c:choose>
+			  		<c:when test="${username == null }">
+			  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
+			  		</c:when>
+			  		<c:otherwise>
+			  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> ${username}</a>
+			  		</c:otherwise>
+		  		</c:choose>
             </div>
          </nav>
       </header>
-      <div class="container">
-         <div class="card-columns">
-            <c:forEach var="movie" items="${controller.loadMovies(actualPage, true)}">
-               <div class="card bg-dark text-white">
-                  <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
-                  <div class="card-body">
-                     <p class="card-title"><i class="fas fa-star"></i><b> ${movie.vote}/10</b></p>
-                     <p class="card-text">${movie.title}</p>
-                     <c:choose>
-                        <c:when test="${movie.isFavorite}">
-                           <input type="button" class="btn btn-danger favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Dislike">
-                        </c:when>
-                        <c:otherwise>
-                           <input type="button" class="btn btn-outline-primary favorite" onclick="likeOrDislikeMovie(${movie.id}, ${movie.isFavorite});" value="Like">
-                        </c:otherwise>
-                     </c:choose>
-                  </div>
-               </div>
-            </c:forEach>
-         </div>
-      </div>
+      <form action="movie" method="post">
+	      <div class="card-columns">
+	         <c:forEach var="movie" items="${controller.loadFavoritesMovies(actualPage)}">
+	            <div class="card bg-dark text-white">
+	               <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
+	               <div class="card-body">
+	                  <p class="card-title"><i class="fas fa-star"></i><b> ${movie.vote}/10</b></p>
+	                  <p class="card-text">${movie.title}</p>
+	                  <input type="hidden" name="isFavorite" value="${movie.isFavorite}">
+	                  <input type="hidden" name="id" value="${movie.id}">
+	                  <c:choose>
+	                     <c:when test="${movie.isFavorite}">
+	                        <input type="submit" class="btn btn-danger favorite" value="Dislike">
+	                     </c:when>
+	                     <c:otherwise>
+	                        <input type="submit" class="btn btn-outline-primary favorite" value="Like">
+	                     </c:otherwise>
+	                  </c:choose>
+	               </div>
+	            </div>
+	         </c:forEach>
+	      </div>
+      </form>
       <footer>
          <form action="movie">
             <ul class="pagination">

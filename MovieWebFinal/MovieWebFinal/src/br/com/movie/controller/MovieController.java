@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.MovieBean;
 import br.com.movie.model.bean.MovieList;
+import br.com.movie.model.bean.MovieUserBean;
 import br.com.movie.model.bo.MovieBO;
 import br.com.movie.model.bo.UserBO;
 import br.com.movie.model.dao.UserDAO;
@@ -37,7 +38,7 @@ public class MovieController extends HttpServlet {
 		this.movieBO = new MovieBO();
 	}
 	
-	public List<MovieBean> loadMovies(int page, boolean favorites) {
+	public List<MovieBean> loadMovies(int page) {
 		
 		MovieList result;
 		
@@ -45,14 +46,46 @@ public class MovieController extends HttpServlet {
 			page = 1;
 		}
 		
-		if (favorites) {
-			movieBO.fetchMovies(UserBO.idUserLogged);
-		} else {
-			result = api.getMovies(page);
-			this.movies = result.getResults();
+		result = api.getMovies(page);
+		this.movies = result.getResults();
+		System.out.println(this.movies);
+		System.out.println("");
+		System.out.println("");
+		return this.movies;
+	}
+	
+	public List<MovieBean> loadFavoritesMovies(int page) {
+		System.out.println("++++Favorites: True");
+		if (page == 0) {
+			page = 1;
 		}
 		
+		System.out.println("++++Favorites: True");
+
+		System.out.println("+++AKI");
+		this.movies = fetchMoviesPerUser();
+		
+		System.out.println(this.movies);
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
 		return this.movies;
+	}
+	
+	public List<MovieBean> fetchMoviesPerUser() {
+		List<MovieUserBean> moviePerUser;
+		List<MovieBean> result = new ArrayList<MovieBean>();
+		
+		moviePerUser = movieBO.fetchMovies(UserBO.idUserLogged);
+		if (moviePerUser != null) {
+			for (MovieUserBean movie : moviePerUser) {
+				System.out.println("+++MovieID: " + movie.getId());
+				result.add(api.getMovie(movie.getMovieId()));
+			}
+			return result;
+		}
+		return null;
 	}
 	
 	public MovieBean loadMovie(int id) {
@@ -90,13 +123,12 @@ public class MovieController extends HttpServlet {
 		} else {
 			if (!isFavorite) {
 				movieBO.addFavMovie(UserBO.idUserLogged, id);
+				req.getSession().setAttribute("isFavorite", "true");
+//				isFavorite = true;
 			} else {
 				movieBO.unlikeMovie(id);
 			}
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, resp);
 		}
 	}
-	
 }
-
-

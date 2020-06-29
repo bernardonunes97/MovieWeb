@@ -1,6 +1,7 @@
 package br.com.movie.model.bean;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,6 +11,7 @@ public class MovieUserBean {
 	
 	//Properties
 	@Id
+	@GeneratedValue
 	private int id;
 	private int userId;
 	private int movieId;

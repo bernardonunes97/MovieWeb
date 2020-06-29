@@ -24,7 +24,7 @@
                <input id="txtSearch" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             </div>
             <div class="col">
-               <a class="navbar-brand" href="#"><i class="fas fa-star"></i></a>
+               <a class="navbar-brand" href="Favoritos.jsp"><i class="fas fa-star"></i></a>
                	<c:choose>
 			  		<c:when test="${username == null }">
 			  			<a class="navbar-brand" href="Login.jsp"><i class="fas fa-user-alt"></i> Entrar</a>
@@ -38,7 +38,7 @@
       </header>
       <form action="movie" method="post">
 	      <div class="card-columns">
-	         <c:forEach var="movie" items="${controller.loadMovies(actualPage, false)}">
+	         <c:forEach var="movie" items="${controller.loadMovies(actualPage)}">
 	            <div class="card bg-dark text-white">
 	               <img src="https://image.tmdb.org/t/p/original${movie.poster}" class="card-img-top">
 	               <div class="card-body">
