@@ -112,6 +112,13 @@ public class UserBO {
 		}
 	}
 	
+	
+	/**
+	 * Validação do input do usuário.
+	 * @param field1 Primeiro input.
+	 * @param field2 Segundo input.
+	 * @return Boolean verdadeiro se o input não for vazio.
+	*/
 	public boolean validateUserInput(String field1, String field2) {
 		
 		if (field1.trim().length() == 0 || field2.trim().length() == 0) {
@@ -120,6 +127,14 @@ public class UserBO {
 		return true;
 	}
 	
+	
+	/**
+	 * Validação do input do usuário.
+	 * @param field1 Primeiro input.
+	 * @param field2 Segundo input.
+	 * @param field3 Terceiro input.
+	 * @return Boolean verdadeiro se o input não for vazio.
+	*/
 	public boolean validateUserInput(String field1, String field2, String field3) {
 		
 		if (validateUserInput(field1, field2)) {
@@ -131,6 +146,15 @@ public class UserBO {
 		return false;
 	}
 	
+	
+	/**
+	 * Validação do input do usuário.
+	 * @param field1 Primeiro input.
+	 * @param field2 Segundo input.
+	 * @param field3 Terceiro input.
+	 * @param field4 Quarto input.
+	 * @return Boolean verdadeiro se o input não for vazio.
+	*/
 	public boolean validateUserInput(String field1, String field2, String field3, String field4) {
 		
 		if (validateUserInput(field1, field2, field3)) {
