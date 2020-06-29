@@ -25,7 +25,7 @@ public class UserBO {
 	 * @return Boolean se o registro foi concluído.
 	*/
 	public boolean createNewUser(String username, String name, String password){
-		if (validateUsername(username)) {
+		if (!validateUsername(username)) {
 			return false;
 		}
 		
