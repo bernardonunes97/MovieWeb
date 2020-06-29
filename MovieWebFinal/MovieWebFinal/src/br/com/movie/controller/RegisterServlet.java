@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import br.com.movie.model.bean.UserBean;
 import br.com.movie.model.bo.UserBO;
@@ -24,6 +25,7 @@ public class RegisterServlet extends HttpServlet {
 		String name = req.getParameter("name");
 		String username = req.getParameter("user");
 		String password = req.getParameter("pwd");
+		HttpSession session = req.getSession();
 		UserBO userBo = new UserBO();
 		
 		if (name == "" || username == "" || password == "") {
@@ -33,6 +35,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		if (userBo.createNewUser(username, name, password)) {
 			System.out.println("Criado!");
+			session.setAttribute("username", username);
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
 			req.setAttribute("error", "Usuário já existe.");

@@ -33,11 +33,11 @@ public class LoginServlet extends HttpServlet {
 		}
 		if (userBo.login(username, password)) {
 			UserBO.idUserLogged = userDao.fetchUsername(username).getId();
+			session.setAttribute("username", username);
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		} else {
 			// Passar id para tela de favoritos
 			//req.setAttribute("userId", user.getId());
-			session.setAttribute("username", username);
 			req.getRequestDispatcher("MovieListView.jsp").forward(req, res);
 		}
 	}
