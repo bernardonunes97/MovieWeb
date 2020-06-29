@@ -16,13 +16,6 @@ public class MovieBO {
 	}
 	
 	// Methods
-	
-	/**
-	 * Método que adiciona filme aos favoritos.
-	 * @param userID id do usuario no banco.
-	 * @param movieID id do filme.
-	 * @return Boolean se a operacao foi concluida.
-	*/
 	public boolean addFavMovie(int userID, int movieID) {
 		MovieUserBean favMovie = new MovieUserBean();
 		favMovie.setMovieId(movieID);
@@ -32,20 +25,10 @@ public class MovieBO {
 		return movieDAO.create(favMovie);
 	}
 	
-	/**
-	 * Desfavorita filme logicamente
-	 * @param movieID id do filme
-	 * @return Boolean se a operacao foi concluida.
-	*/
 	public boolean unlikeMovie(int movieId) {
 		return movieDAO.delete(movieId);
 	}
 	
-	/**
-	 * Retorna lista de filmes favoritos
-	 * @param userID id do usuário
-	 * @return  List<MovieUserBean> lista com os filmesÍ
-	*/
 	public List<MovieUserBean> fetchMovies(int userId) {
 		return movieDAO.fetchUserId(userId);
 	}
