@@ -88,16 +88,12 @@ public class MovieController extends HttpServlet {
 		if (session == null || session.getAttribute("username") == null) {
 			req.getRequestDispatcher("Login.jsp").forward(req, resp);
 		} else {
-			System.out.println("Está logado");
-		}
-		
-		System.out.println("ID -> " + id);
-		System.out.println("Favorite -> " + isFavorite);
-		
-		if (isFavorite) {
-			movieBO.addFavMovie(UserBO.idUserLogged, id);
-		} else {
-			movieBO.unlikeMovie(id);
+			if (isFavorite) {
+				movieBO.addFavMovie(UserBO.idUserLogged, id);
+			} else {
+				movieBO.unlikeMovie(id);
+			}
+			req.getRequestDispatcher("MovieListView.jsp").forward(req, resp);
 		}
 	}
 	

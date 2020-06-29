@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
 		// BO e DAO
 		UserBO userBo = new UserBO();
 		UserDAO userDao = new UserDAO();
+		HttpSession session = req.getSession();
 		
 		// Testando input do usuário
 		if (username == "" || password == "") {
